@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laudo Básico – Diagnóstico | Sistema Solar</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #f4f7fc; color: #0f172a; line-height: 1.5; }
+  .hero { background: linear-gradient(135deg, #0b2b26 0%, #144d3a 100%); color: white; padding: 3rem 2rem 2.5rem; }
+  .hero-inner { max-width: 1280px; margin: 0 auto; }
+  .logo-area { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+  .logo-area img { max-height: 55px; background: rgba(255,255,255,0.9); border-radius: 12px; padding: 6px 12px; }
+  .badge { display: inline-block; background: rgba(255,255,255,0.12); padding: 6px 14px; border-radius: 40px; font-size: 0.75rem; font-weight: 600; color: #fcd34d; }
+  .hero h1 { font-size: 2rem; margin: 1rem 0 0.5rem; }
+  .top-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .quick-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .stat-card { background: rgba(255,255,255,0.08); border-radius: 1.5rem; padding: 1.2rem; }
+  .stat-card .label { font-size: 0.7rem; color: #fcd34d; text-transform: uppercase; }
+  .stat-card .value { font-size: 1.8rem; font-weight: 800; }
+  .exec-summary { background: white; border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2); }
+  .exec-summary h3 { font-size: 1.3rem; color: #0b2b26; }
+  .tag-group { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+  .tag { background: #fef9e6; color: #b45309; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.75rem; font-weight: 600; }
+  .container { max-width: 1280px; margin: 2rem auto; padding: 0 1.5rem 3rem; }
+  section { margin-bottom: 3rem; }
+  .section-title { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .section-title .number { background: #144d3a; color: white; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 60px; font-weight: 800; }
+  .section-title h2 { font-size: 1.8rem; font-weight: 700; color: #0b2b26; }
+  .lead { color: #475569; margin-bottom: 1.8rem; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .kpi-card { background: white; border-radius: 1.2rem; padding: 1.2rem; border: 1px solid #e2edf2; text-align: center; }
+  .kpi-card .kpi-value { font-size: 1.8rem; font-weight: 800; color: #144d3a; }
+  .cards-2col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 1.5rem 0; }
+  .card { background: white; border-radius: 1.2rem; padding: 1.5rem; border: 1px solid #e9edf2; }
+  .table-wrapper { overflow-x: auto; background: white; border-radius: 1rem; border: 1px solid #e2e8f0; margin: 1.5rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  th { background: #f1f5f9; padding: 0.9rem 1rem; text-align: left; }
+  td { padding: 0.8rem 1rem; border-bottom: 1px solid #eef2f6; }
+  .badge-perda { background: #fee2e2; color: #b91c1c; padding: 0.2rem 0.6rem; border-radius: 30px; font-weight: 600; font-size: 0.7rem; display: inline-block; }
+  .recomendacao-item { background: #fefaf5; border-left: 4px solid #f97316; padding: 1rem; margin-bottom: 1rem; border-radius: 0.8rem; }
+  .upsell { background: linear-gradient(135deg, #eaf7ef, #d4ede1); border-radius: 1.5rem; padding: 2rem; text-align: center; margin: 2rem 0; }
+  .btn { background: #144d3a; color: white; padding: 0.8rem 2rem; border-radius: 60px; text-decoration: none; font-weight: 700; display: inline-block; margin-top: 1rem; }
+  .footer { background: #0b2b26; color: rgba(255,255,255,0.8); padding: 2rem; border-radius: 1.5rem; margin-top: 2rem; font-size: 0.8rem; }
+  @media (max-width: 800px) { .top-grid, .cards-2col { grid-template-columns: 1fr; } .quick-stats { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="logo-area"><img src="https://i.imgur.com/cce53oS.png" alt="Logo"></div>
+    <span class="badge">Laudo Básico • Diagnóstico</span>
+    <h1>Relatório de Desempenho Solar</h1>
+    <p><strong>Metalúrgica Nogueira LTDA</strong> • São Paulo/SP</p>
+    <div class="top-grid">
+      <div class="quick-stats">
+        <div class="stat-card"><div class="label">Potência</div><div class="value">75,6 kWp</div><small>168 módulos</small></div>
+        <div class="stat-card"><div class="label">Período</div><div class="value">3 meses</div><small>Dez/24 a Fev/25</small></div>
+        <div class="stat-card"><div class="label">Geração real vs esperada</div><div class="value">67%</div><small>eficiência</small></div>
+        <div class="stat-card"><div class="label">Perda total</div><div class="value">R$ 2.190</div><small>3 meses</small></div>
+      </div>
+      <div class="exec-summary">
+        <h3>🔍 Resumo</h3>
+        <p>Seu sistema gerou 33% a menos que o esperado nos últimos 3 meses. Perda de R$ 2.190.</p>
+        <div class="tag-group"><span class="tag">Status: Atenção</span><span class="tag">Recomendação: Limpeza</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <section>
+    <div class="section-title"><span class="number">1</span><h2>Resumo Executivo</h2></div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-value">63%</div><div>Performance Ratio</div></div>
+      <div class="kpi-card"><div class="kpi-value">R$ 2.190</div><div>Perda acumulada</div></div>
+    </div>
+    <div class="card"><p><strong>Próximo passo:</strong> Limpeza dos módulos.</p></div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="number">2</span><h2>Dados da Usina</h2></div>
+    <div class="cards-2col">
+      <div class="card"><h3>Características</h3><table><tr><th>Potência</th><td>75,6 kWp</td></tr><tr><th>Módulos</th><td>168</td></tr><tr><th>Inversor</th><td>Growatt</td></tr><tr><th>Conexão</th><td>15/03/2022</td></tr></table></div>
+      <div class="card"><h3>Localização</h3><table><tr><th>Município</th><td>São Paulo/SP</td></tr><tr><th>HSP</th><td>4,35 h/dia</td></tr></table></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="number">3</span><h2>Geração (últimos 3 meses)</h2></div>
+    <div class="table-wrapper">
+      <table><thead><tr><th>Mês</th><th>Real (kWh)</th><th>Esperado (kWh)</th><th>Diferença</th></tr></thead>
+      <tbody><tr><td>Dez/24</td><td>5.220</td><td>7.960</td><td class="badge-perda">-34,4%</td></tr>
+      <tr><td>Jan/25</td><td>5.310</td><td>8.110</td><td class="badge-perda">-34,5%</td></tr>
+      <tr><td>Fev/25</td><td>5.080</td><td>7.900</td><td class="badge-perda">-35,7%</td></tr>
+      </tbody></table>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><span class="number">4</span><h2>Recomendação</h2></div>
+    <div class="recomendacao-item">Contrate uma limpeza profissional dos módulos e monitore a evolução.</div>
+  </section>
+
+  <section id="upsell">
+    <div class="upsell">
+      <h2>🔒 Upgrade para Essencial ou Premium</h2>
+      <p>Receba relatórios quinzenais, alertas e suporte remoto.</p>
+      <a href="#" class="btn">Conheça os planos →</a>
+    </div>
+  </section>
+
+  <div class="footer">
+    Laudo Básico – 16/04/2025. Geração esperada baseada em HSP e potência instalada.
+  </div>
+</div>
+</body>
+</html>
